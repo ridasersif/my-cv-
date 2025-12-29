@@ -1,0 +1,438 @@
+:root {
+    --primary: #0f172a;
+    /* Official Dark Navy */
+    --accent: #1e40af;
+    /* Sober Professional Blue */
+    --text: #1e293b;
+    /* Dark Slate for main text */
+    --text-light: #475569;
+    /* Slate for secondary info */
+    --border: #cbd5e1;
+    /* Subtle border */
+    --bg: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    color: var(--text);
+    line-height: 1.4;
+    background-color: #f8fafc;
+    padding: 10px 0;
+    font-size: 11.5px;
+    /* Slightly reduced */
+}
+
+.cv-container {
+    background-color: var(--bg);
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px 30px;
+    /* Reduced padding */
+    box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1);
+}
+
+/* Header */
+.cv-header {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    border-bottom: 2px solid var(--primary);
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+}
+
+.profile-photo {
+    width: 110px;
+    height: 110px;
+    border-radius: 4px;
+    object-fit: cover;
+    border: 1px solid var(--border);
+}
+
+.header-right {
+    flex: 1;
+}
+
+.name {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 6px;
+    letter-spacing: -0.01em;
+}
+
+.role {
+    font-size: 0.85rem;
+    color: var(--accent);
+    font-weight: 600;
+    margin-bottom: 1px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.contact-info {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px 12px;
+}
+
+.contact-item {
+    font-size: 11px;
+    color: var(--text-light);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.contact-item i {
+    color: var(--primary);
+    font-size: 10px;
+}
+
+/* QR Code */
+.header-qr {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    padding-left: 15px;
+    border-left: 1px solid var(--border);
+}
+
+.qr-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    text-decoration: none;
+    color: inherit;
+}
+
+.qr-code {
+    width: 65px;
+    height: 65px;
+    padding: 3px;
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+}
+
+.qr-label {
+    font-size: 9px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--text-light);
+    letter-spacing: 0.05em;
+}
+
+body.rtl .header-qr {
+    padding-left: 0;
+    padding-right: 15px;
+    border-left: none;
+    border-right: 1px solid var(--border);
+    order: 0;
+    /* Keep it at the far end */
+}
+
+/* Sections */
+.cv-section {
+    margin-bottom: 8px;
+    /* Further reduced from 12px */
+}
+
+.section-title {
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--primary);
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 3px;
+    margin-bottom: 8px;
+    letter-spacing: 0.05em;
+}
+
+/* Skills */
+.skills-list p {
+    font-size: 12px;
+    margin-bottom: 2px;
+}
+
+/* Experience & Projects */
+.experience-item,
+.project-item {
+    margin-bottom: 6px;
+    /* Further reduced from 10px */
+}
+
+.item-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2px;
+}
+
+.item-title {
+    font-weight: 600;
+    font-size: 13px;
+    color: var(--primary);
+}
+
+.item-tech {
+    color: var(--accent);
+    font-size: 11.5px;
+    font-weight: 500;
+}
+
+.project-link {
+    text-decoration: none;
+    color: var(--primary);
+    transition: color 0.2s;
+}
+
+.project-link:hover {
+    color: var(--accent);
+}
+
+.project-link:hover .item-tech {
+    color: var(--accent);
+}
+
+.item-date {
+    font-size: 11px;
+    color: var(--text-light);
+    font-weight: 500;
+}
+
+.item-link {
+    font-size: 11.5px;
+    color: var(--accent);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border 0.2s;
+}
+
+.item-link:hover {
+    border-bottom: 1px solid var(--accent);
+}
+
+.item-details {
+    margin-left: 15px;
+    font-size: 11.5px;
+    /* Reduced */
+    color: var(--text);
+}
+
+.project-desc,
+.profile-desc {
+    font-size: 12px;
+    color: var(--text);
+    text-align: justify;
+}
+
+.profile-desc {
+    line-height: 1.5;
+}
+
+/* Layout Utilities */
+.two-columns {
+    display: grid;
+    grid-template-columns: 1.6fr 1.4fr;
+    /* Adjusted for longer education text */
+    gap: 20px;
+}
+
+.education-item {
+    margin-bottom: 8px;
+}
+
+.education-item .item-date {
+    display: block;
+    margin-bottom: 1px;
+}
+
+.simple-list {
+    font-size: 11.5px;
+}
+
+.languages-list-vertical p,
+.soft-skills-list-vertical p {
+    font-size: 11.5px;
+    margin-bottom: 2px;
+}
+
+/* Actions */
+.actions {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+
+.btn-primary {
+    background-color: var(--primary);
+    color: white;
+    border: none;
+    padding: 8px 18px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: opacity 0.2s;
+}
+
+.btn-primary:hover {
+    opacity: 0.9;
+}
+
+/* Language Switcher */
+.lang-switcher {
+    display: flex;
+    gap: 5px;
+    background: #e2e8f0;
+    padding: 4px;
+    border-radius: 6px;
+}
+
+.btn-lang {
+    background: transparent;
+    border: none;
+    padding: 5px 10px;
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--text-light);
+    cursor: pointer;
+    border-radius: 4px;
+    transition: all 0.2s;
+}
+
+.btn-lang.active {
+    background: white;
+    color: var(--primary);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.btn-lang:hover:not(.active) {
+    background: #cbd5e1;
+}
+
+/* RTL Support */
+body.rtl {
+    direction: rtl;
+    text-align: right;
+}
+
+body.rtl .header-left {
+    order: 2;
+}
+
+body.rtl .header-right {
+    order: 1;
+    text-align: right;
+}
+
+body.rtl .contact-info {
+    justify-content: flex-start;
+}
+
+body.rtl .section-title {
+    border-left: none;
+    border-right: none;
+    position: relative;
+    padding-right: 0;
+}
+
+body.rtl .item-details {
+    margin-left: 0;
+    margin-right: 18px;
+    /* Slightly increased for Arabic */
+}
+
+body.rtl .item-header {
+    flex-direction: row;
+    /* Keep standard flow so space-between works correctly in RTL */
+}
+
+body.rtl .item-link {
+    margin-right: 10px;
+    margin-left: 0;
+}
+
+body.rtl .two-columns {
+    grid-template-columns: 1fr 1.5fr;
+}
+
+body.rtl .simple-list,
+body.rtl .project-desc,
+body.rtl .profile-desc {
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+/* Print RTL */
+@media print {
+    body.rtl {
+        direction: rtl;
+    }
+}
+
+/* Print Specifics */
+@page {
+    margin: 0;
+    size: auto;
+}
+
+@media print {
+    body {
+        margin: 0;
+        padding: 0;
+        background-color: white;
+        font-size: 11pt;
+        line-height: 1.4;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+
+    .cv-container {
+        box-shadow: none;
+        margin: 0 !important;
+        padding: 10mm !important;
+        /* Reduced from 15mm to save space */
+        width: 100% !important;
+        max-width: none !important;
+    }
+
+    .actions {
+        display: none !important;
+    }
+
+    /* Force interactive links in PDFs */
+    a {
+        pointer-events: auto !important;
+        position: relative !important;
+        z-index: 99 !important;
+        text-decoration: none !important;
+        display: inline-block;
+        /* Helps PDF parsers find the clickable box */
+    }
+
+    /* Prevent clipping on specific elements */
+    .item-header,
+    .cv-header {
+        page-break-inside: avoid;
+    }
+
+    .item-link {
+        color: var(--primary) !important;
+    }
+}

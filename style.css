@@ -25,17 +25,17 @@ body {
     color: var(--text);
     line-height: 1.4;
     background-color: #f8fafc;
-    padding: 10px 0;
-    font-size: 11.5px;
-    /* Slightly reduced */
+    padding: 6px 0;
+    font-size: 11.2px;
+    /* Fine-tuned to fit one page */
 }
 
 .cv-container {
     background-color: var(--bg);
     max-width: 800px;
     margin: 0 auto;
-    padding: 20px 30px;
-    /* Reduced padding */
+    padding: 16px 26px;
+    /* Balanced padding */
     box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1);
 }
 
@@ -45,13 +45,13 @@ body {
     gap: 30px;
     align-items: center;
     border-bottom: 2px solid var(--primary);
-    padding-bottom: 10px;
-    margin-bottom: 15px;
+    padding-bottom: 8px;
+    margin-bottom: 12px;
 }
 
 .profile-photo {
-    width: 110px;
-    height: 110px;
+    width: 98px;
+    height: 98px;
     border-radius: 4px;
     object-fit: cover;
     border: 1px solid var(--border);
@@ -62,10 +62,10 @@ body {
 }
 
 .name {
-    font-size: 1.5rem;
+    font-size: 1.45rem;
     font-weight: 700;
     color: var(--primary);
-    margin-bottom: 6px;
+    margin-bottom: 4px;
     letter-spacing: -0.01em;
 }
 
@@ -118,8 +118,8 @@ body {
 }
 
 .qr-code {
-    width: 65px;
-    height: 65px;
+    width: 55px;
+    height: 55px;
     padding: 3px;
     background: white;
     border: 1px solid var(--border);
@@ -146,7 +146,7 @@ body.rtl .header-qr {
 /* Sections */
 .cv-section {
     margin-bottom: 8px;
-    /* Further reduced from 12px */
+    /* Slightly reduced to prevent overflow */
 }
 
 .section-title {
@@ -155,22 +155,30 @@ body.rtl .header-qr {
     text-transform: uppercase;
     color: var(--primary);
     border-bottom: 1px solid var(--border);
-    padding-bottom: 3px;
-    margin-bottom: 8px;
+    padding-bottom: 2px;
+    margin-bottom: 6px;
     letter-spacing: 0.05em;
+}
+
+.projects-extra {
+    font-size: 11px;
+    color: var(--accent);
+    font-weight: 500;
+    margin-bottom: 8px;
+    font-style: italic;
 }
 
 /* Skills */
 .skills-list p {
-    font-size: 12px;
-    margin-bottom: 2px;
+    font-size: 11.2px;
+    margin-bottom: 1px;
 }
 
 /* Experience & Projects */
 .experience-item,
 .project-item {
     margin-bottom: 6px;
-    /* Further reduced from 10px */
+    /* Slightly reduced */
 }
 
 .item-header {
@@ -232,7 +240,7 @@ body.rtl .header-qr {
 
 .project-desc,
 .profile-desc {
-    font-size: 12px;
+    font-size: 11.2px;
     color: var(--text);
     text-align: justify;
 }
@@ -246,7 +254,7 @@ body.rtl .header-qr {
     display: grid;
     grid-template-columns: 1.6fr 1.4fr;
     /* Adjusted for longer education text */
-    gap: 20px;
+    gap: 18px;
 }
 
 .education-item {
@@ -326,65 +334,6 @@ body.rtl .header-qr {
     background: #cbd5e1;
 }
 
-/* RTL Support */
-body.rtl {
-    direction: rtl;
-    text-align: right;
-}
-
-body.rtl .header-left {
-    order: 2;
-}
-
-body.rtl .header-right {
-    order: 1;
-    text-align: right;
-}
-
-body.rtl .contact-info {
-    justify-content: flex-start;
-}
-
-body.rtl .section-title {
-    border-left: none;
-    border-right: none;
-    position: relative;
-    padding-right: 0;
-}
-
-body.rtl .item-details {
-    margin-left: 0;
-    margin-right: 18px;
-    /* Slightly increased for Arabic */
-}
-
-body.rtl .item-header {
-    flex-direction: row;
-    /* Keep standard flow so space-between works correctly in RTL */
-}
-
-body.rtl .item-link {
-    margin-right: 10px;
-    margin-left: 0;
-}
-
-body.rtl .two-columns {
-    grid-template-columns: 1fr 1.5fr;
-}
-
-body.rtl .simple-list,
-body.rtl .project-desc,
-body.rtl .profile-desc {
-    text-align: justify;
-    text-justify: inter-word;
-}
-
-/* Print RTL */
-@media print {
-    body.rtl {
-        direction: rtl;
-    }
-}
 
 /* Print Specifics */
 @page {
